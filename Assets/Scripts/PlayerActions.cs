@@ -37,19 +37,75 @@ public class PlayerActions : MonoBehaviour
     }
     void ActionPlayer()
     {
-        //si pulso y apunto a un objeto interactuable:
+        //Take Drop:
+
+        //quiero aislarlos
+        //if (Object.ObjectType.TakeDrop == TakeDrop.ObjectType.TakeDrop) { }
+        //if (playerRaycast.takeDrop.IsObjectSelected = true) { }
+
+
         if (Input.GetMouseButtonDown(0) && playerRaycast.takeDrop != null)
         {
-            Debug.Log("Acción1");
+            Debug.Log("Acción1: TAKING");
             playerRaycast.takeDrop.ActionOne();
             objectSelected = playerRaycast.takeDrop.gameObject;
             playerRaycast.takeDrop = null;
         }
         else if (Input.GetMouseButtonDown(0) && objectSelected != null)
         {
-            Debug.Log("Acción2");
+            Debug.Log("Acción2: DROPING");
 
             objectSelected.GetComponent<TakeDrop>().ActionTwo();
+            objectSelected = null;
+        }        
+        
+        //Clean: 
+        if(Input.GetMouseButtonDown(0) && playerRaycast.clean != null)
+        {
+            Debug.Log("Acción1:CLEANING");
+            playerRaycast.clean.Cleaning();
+            objectSelected = playerRaycast.clean.gameObject;
+            playerRaycast.clean = null;
+        }
+        else if (Input.GetMouseButtonDown(0) && objectSelected != null)
+        {
+            objectSelected = null;
+        }
+
+        //Read:
+        if (Input.GetMouseButtonDown(0) && playerRaycast.read != null)
+        {
+            Debug.Log("Acción1:READING");
+            playerRaycast.read.Reading();
+            objectSelected = playerRaycast.read.gameObject;
+            playerRaycast.read = null;
+        }
+        else if (Input.GetMouseButtonDown(0) && objectSelected != null)
+        {
+            objectSelected = null;
+        }
+        //TidyUp:
+        if (Input.GetMouseButtonDown(0) && playerRaycast.tidyUp != null)
+        {
+            Debug.Log("Acción1:TIDYING UP");
+            playerRaycast.tidyUp.TidyingUp();
+            objectSelected = playerRaycast.clean.gameObject;
+            playerRaycast.tidyUp = null;
+        }
+        else if (Input.GetMouseButtonDown(0) && objectSelected != null)
+        {
+            objectSelected = null;
+        }
+        //On/Off:
+        if (Input.GetMouseButtonDown(0) && playerRaycast.onOff != null)
+        {
+            Debug.Log("Acción1:SWITCHING ON OFF");
+            playerRaycast.onOff.SwitchOnOff();
+            objectSelected = playerRaycast.onOff.gameObject;
+            playerRaycast.onOff= null;
+        }
+        else if (Input.GetMouseButtonDown(0) && objectSelected != null)
+        {
             objectSelected = null;
         }
     }
