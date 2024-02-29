@@ -37,96 +37,177 @@ public class PlayerActions : MonoBehaviour
     }
     void ActionPlayer()
     {
-        //Take Drop:
+        if (Input.GetMouseButton(0))
+        {
+            //TakeDrop:
+            if (playerRaycast.takeDrop != null)
+            {
+                if (objectSelected != null)
+                {
+                    Debug.Log("Acción2: DROPING");
 
-        //quiero aislarlos
-        //if (Object.ObjectType.TakeDrop == TakeDrop.ObjectType.TakeDrop) { }
-        //if (playerRaycast.takeDrop.IsObjectSelected = true) { }
+                    objectSelected.GetComponent<TakeDrop>().ActionTwo();
+                    objectSelected = null;
+                }
+                else
+                {
+                    Debug.Log("Acción1: TAKING");
+                    playerRaycast.takeDrop.ActionOne();
+                    objectSelected = playerRaycast.takeDrop.gameObject;
+                    //playerRaycast.takeDrop = null;
+                }
+            }
+            //Clean:
+            if (playerRaycast.clean != null)
+            {
+                if (objectSelected != null)
+                {
+                    objectSelected = null;
+                }
+                else
+                {
+                    Debug.Log("Acción1:CLEANING");
+                    playerRaycast.clean.Cleaning();
+                    objectSelected = playerRaycast.clean.gameObject;
+                    playerRaycast.clean = null;
+                }
+            }
 
+            //Read:
+            if(playerRaycast.read != null)
+            {
+                if(objectSelected != null)
+                {
+                    objectSelected = null;
+                }
+                else
+                {
+                    Debug.Log("Acción1:READING");
+                    playerRaycast.read.Reading();
+                    objectSelected = playerRaycast.read.gameObject;
+                    playerRaycast.read = null;
+                }
+            }
+            //TidyUp:
+            if(playerRaycast.tidyUp != null)
+            {
+                if (objectSelected != null)
+                {
+                    objectSelected = null;
+                }
+                else
+                {
+                    Debug.Log("Acción1:TIDYING UP");
+                    playerRaycast.tidyUp.TidyingUp();
+                    objectSelected = playerRaycast.clean.gameObject;
+                    playerRaycast.tidyUp = null;
+                }
+            }
+            //On/Off:
+            if(playerRaycast.onOff != null)
+            {
+                if(objectSelected != null)
+                {
+                    objectSelected = null;
+                }
+                else
+                {
+                    Debug.Log("Acción1:SWITCHING ON OFF");
+                    playerRaycast.onOff.SwitchOnOff();
+                    objectSelected = playerRaycast.onOff.gameObject;
+                    //playerRaycast.onOff= null;
+                }
+            }
 
-        if (Input.GetMouseButtonDown(0) && playerRaycast.takeDrop != null)
-        {
-            Debug.Log("Acción1: TAKING");
-            playerRaycast.takeDrop.ActionOne();
-            objectSelected = playerRaycast.takeDrop.gameObject;
-            playerRaycast.takeDrop = null;
-        }
-        else if (Input.GetMouseButtonDown(0) && objectSelected != null)
-        {
-            Debug.Log("Acción2: DROPING");
+            /*
+            //Take Drop
 
-            objectSelected.GetComponent<TakeDrop>().ActionTwo();
-            objectSelected = null;
-        }        
-        
-        //Clean: 
-        if(Input.GetMouseButtonDown(0) && playerRaycast.clean != null)
-        {
-            Debug.Log("Acción1:CLEANING");
-            playerRaycast.clean.Cleaning();
-            objectSelected = playerRaycast.clean.gameObject;
-            playerRaycast.clean = null;
-        }
-        else if (Input.GetMouseButtonDown(0) && objectSelected != null)
-        {
-            objectSelected = null;
-        }
+            if (Input.GetMouseButtonDown(0) && playerRaycast.takeDrop != null)
+            {
+                Debug.Log("Acción1: TAKING");
+                playerRaycast.takeDrop.ActionOne();
+                objectSelected = playerRaycast.takeDrop.gameObject;
+                playerRaycast.takeDrop = null;
+                //Debug.Log(objectSelected.name+  "");
+            }
+            else if (Input.GetMouseButtonDown(0) && objectSelected != null)
+            {
+                Debug.Log("Acción2: DROPING");
 
-        //Read:
-        if (Input.GetMouseButtonDown(0) && playerRaycast.read != null)
-        {
-            Debug.Log("Acción1:READING");
-            playerRaycast.read.Reading();
-            objectSelected = playerRaycast.read.gameObject;
-            playerRaycast.read = null;
-        }
-        else if (Input.GetMouseButtonDown(0) && objectSelected != null)
-        {
-            objectSelected = null;
-        }
-        //TidyUp:
-        if (Input.GetMouseButtonDown(0) && playerRaycast.tidyUp != null)
-        {
-            Debug.Log("Acción1:TIDYING UP");
-            playerRaycast.tidyUp.TidyingUp();
-            objectSelected = playerRaycast.clean.gameObject;
-            playerRaycast.tidyUp = null;
-        }
-        else if (Input.GetMouseButtonDown(0) && objectSelected != null)
-        {
-            objectSelected = null;
-        }
-        //On/Off:
-        if (Input.GetMouseButtonDown(0) && playerRaycast.onOff != null)
-        {
-            Debug.Log("Acción1:SWITCHING ON OFF");
-            playerRaycast.onOff.SwitchOnOff();
-            objectSelected = playerRaycast.onOff.gameObject;
-            playerRaycast.onOff= null;
-        }
-        else if (Input.GetMouseButtonDown(0) && objectSelected != null)
-        {
-            objectSelected = null;
+                objectSelected.GetComponent<TakeDrop>().ActionTwo();
+                objectSelected = null;
+            }        
+
+            //Clean: 
+            if(Input.GetMouseButtonDown(0) && playerRaycast.clean != null)
+            {
+                Debug.Log("Acción1:CLEANING");
+                playerRaycast.clean.Cleaning();
+                objectSelected = playerRaycast.clean.gameObject;
+                playerRaycast.clean = null;
+            }
+            else if (Input.GetMouseButtonDown(0) && objectSelected != null)
+            {
+                objectSelected = null;
+            }
+
+            //Read:
+            if (Input.GetMouseButtonDown(0) && playerRaycast.read != null)
+            {
+                Debug.Log("Acción1:READING");
+                playerRaycast.read.Reading();
+                objectSelected = playerRaycast.read.gameObject;
+                playerRaycast.read = null;
+            }
+            else if (Input.GetMouseButtonDown(0) && objectSelected != null)
+            {
+                objectSelected = null;
+            }
+            //TidyUp:
+            if (Input.GetMouseButtonDown(0) && playerRaycast.tidyUp != null)
+            {
+                Debug.Log("Acción1:TIDYING UP");
+                playerRaycast.tidyUp.TidyingUp();
+                objectSelected = playerRaycast.clean.gameObject;
+                playerRaycast.tidyUp = null;
+            }
+            else if (Input.GetMouseButtonDown(0) && objectSelected != null)
+            {
+                objectSelected = null;
+            }
+            //On/Off:
+            if (Input.GetMouseButtonDown(0) && playerRaycast.onOff != null)
+            {
+                Debug.Log("Acción1:SWITCHING ON OFF");
+                playerRaycast.onOff.SwitchOnOff();
+                //objectSelected = playerRaycast.onOff.gameObject;
+                //playerRaycast.onOff= null;
+            }
+            /*else if (Input.GetMouseButtonDown(0) && objectSelected != null)
+            {
+                objectSelected = null;
+            }*/
+
         }
     }
-    void RotateObject()
-    {
-        if (Input.GetKey(KeyCode.E) && objectSelected != null)
+        void RotateObject()
         {
-            mouseLook.enabled = false;
-            float mouseX = Input.GetAxis("Mouse X");
-            float mouseY = Input.GetAxis("Mouse Y");
+            if (Input.GetKey(KeyCode.E) && objectSelected != null)
+            {
+                mouseLook.enabled = false;
+                float mouseX = Input.GetAxis("Mouse X");
+                float mouseY = Input.GetAxis("Mouse Y");
 
-            angleX += mouseY * mouseSensitivity;
-            angleY += mouseX * mouseSensitivity;
+                angleX += mouseY * mouseSensitivity;
+                angleY += mouseX * mouseSensitivity;
 
-            posObject.localPosition = posObjectToRotate;
-            objectSelected.transform.rotation = Quaternion.Euler(angleX, angleY, 0);
-        }
-        else
-        {
-            posObject.localPosition = posObjectInit;
-            mouseLook.enabled = true;
+                posObject.localPosition = posObjectToRotate;
+                objectSelected.transform.rotation = Quaternion.Euler(angleX, angleY, 0);
+            }
+            else
+            {
+                posObject.localPosition = posObjectInit;
+                mouseLook.enabled = true;
+            }
         }
     }
-}

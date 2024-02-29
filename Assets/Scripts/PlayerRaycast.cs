@@ -48,6 +48,8 @@ public class PlayerRaycast : MonoBehaviour
         }
         else
         {
+            //decirle de alguna forma si no tengo bjeto selecionado ya o en la mano
+            //que esta parte del takedrop se desactive
             if(takeDrop != null)
             {
                 takeDrop.IsObjectSelected(false);

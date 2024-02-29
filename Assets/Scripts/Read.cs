@@ -7,6 +7,8 @@ public class Read : Object
     public void Reading()
     {
         Debug.Log("Reading...");
+        IsObjectSelected(false);
+        
         Destroy(gameObject);
 
 

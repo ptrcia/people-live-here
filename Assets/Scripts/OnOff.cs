@@ -14,19 +14,20 @@ public class OnOff : Object
     }
     public void SwitchOnOff() 
     {
+        //IsObjectSelected(false);
+
         Debug.Log("On/Off...");
         //Destroy(gameObject);
 
-        if(audioSource.enabled)
+        if(audioSource.isPlaying)
         {
             //audioSource.enabled = false;
             audioSource.Pause();
-        }
-        
-        if (!audioSource.enabled)
+        }     
+        else if (!audioSource.isPlaying)
         {
             //audioSource.enabled = true;        
-            audioSource.Play();
+            audioSource.UnPause();
         }
     }
 }

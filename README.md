@@ -1,12 +1,11 @@
 # People Live Here
-#### A 3D tiny game about poverty and hunger
+#### A 3D tiny game about ths ups and downs in life.
 Author: Patricia S. Gracia Artero
 2024
 
 
 ## Description
-The player mans a booth at a food bank, during a time when need inflates the queues.
-
+You are a professional cleaner hired to go to a house to clean from time to time. Through those eyes you will see the life of the people living there through their mess.
 [in progress]
 
 

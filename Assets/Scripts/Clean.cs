@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Clean : Object
 {
@@ -18,7 +17,8 @@ public class Clean : Object
     public void Cleaning()
     {
         Debug.Log("Cleaning...");
-        Instantiate(cleanPrefab, this.transform);
+        IsObjectSelected(false);
+        Instantiate(cleanPrefab, transform.position, Quaternion.identity);
         Destroy(dirtyObject);
     }
 }
