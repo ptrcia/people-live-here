@@ -5,6 +5,9 @@ using UnityEngine;
 public class Read : Object
 {
     //En proceso
+    //quiero hacer que se active la luz cuando lo cojas
+    //pero que haya algun tipo de render en el layer para que no afecte esa luz a nada mas
+
 
     //Theoretically this script will make the object
     //come close enough to be readable and,
@@ -18,12 +21,15 @@ public class Read : Object
     GameObject player;
     [SerializeField]
     Transform originalPosition;
+    [SerializeField]
+    Light readLight;
 
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerMovement = player.GetComponent<PlayerMovement>();
         originalPosition = transform;
+        readLight = gameObject.GetComponentInChildren<Light>();
     }
     public void Reading()
     {
@@ -36,6 +42,7 @@ public class Read : Object
         transform.localRotation = new Quaternion();
         col.enabled = false;
         DisableMovement();
+         readLight.enabled = true;
 
 
     }
@@ -45,6 +52,7 @@ public class Read : Object
         transform.position = originalPosition.position; //¿?
         col.enabled = true;
         EnableMovement();
+        readLight.enabled = false;
 
     }
 
