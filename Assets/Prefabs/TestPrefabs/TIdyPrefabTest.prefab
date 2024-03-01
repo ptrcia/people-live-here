@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6971334323782098115}
   - component: {fileID: 4491432576879763032}
   m_Layer: 0
-  m_Name: CleanPrefabTest
+  m_Name: TIdyPrefabTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

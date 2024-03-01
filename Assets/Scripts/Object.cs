@@ -10,6 +10,8 @@ public class Object : MonoBehaviour
     public Collider col;
     public ObjectType objectType;
 
+    //el nuevo material puede ser un efecto o un shader, porque si cambio el material...
+
     [SerializeField] Material mat; //material original
     [SerializeField] Material newMat; //el material que va a tener al selecionarlo
     [SerializeField] string textToShow;

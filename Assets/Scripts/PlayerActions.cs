@@ -78,6 +78,8 @@ public class PlayerActions : MonoBehaviour
             {
                 if(objectSelected != null)
                 {
+                    Debug.Log("Acción2: STOP READING");
+                    objectSelected.GetComponent<Read>().StopReading();
                     objectSelected = null;
                 }
                 else

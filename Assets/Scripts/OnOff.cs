@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class OnOff : Object
 {
+    //This script pauses and resumes the audio attached to the GameObject as selected.
+
     AudioClip audioClip;
     AudioSource audioSource;
 
@@ -14,19 +16,14 @@ public class OnOff : Object
     }
     public void SwitchOnOff() 
     {
-        //IsObjectSelected(false);
-
         Debug.Log("On/Off...");
-        //Destroy(gameObject);
 
         if(audioSource.isPlaying)
         {
-            //audioSource.enabled = false;
             audioSource.Pause();
         }     
         else if (!audioSource.isPlaying)
         {
-            //audioSource.enabled = true;        
             audioSource.UnPause();
         }
     }

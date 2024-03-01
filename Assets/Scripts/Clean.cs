@@ -4,21 +4,31 @@ using UnityEngine;
 
 public class Clean : Object
 {
+    //This script changes the material of the object
+    //from a dirty one to a clean one without the need to change the whole object.
+
+    //No funciona :)
+
     [SerializeField]
-    GameObject dirtyObject;
+    Material dirtyMaterial;
     [SerializeField]
-    GameObject cleanPrefab;
+    Material cleanMaterial;
+    [SerializeField]
+    Renderer rend;
 
     private void Awake()
     {
-        dirtyObject = this.gameObject;
+        dirtyMaterial = this.gameObject.GetComponent<Material>();
+        rend = this.gameObject.GetComponent<Renderer>();
     }
 
     public void Cleaning()
     {
         Debug.Log("Cleaning...");
         IsObjectSelected(false);
-        Instantiate(cleanPrefab, transform.position, Quaternion.identity);
-        Destroy(dirtyObject);
+        //dirtyMaterial = cleanMaterial;
+        rend.material = cleanMaterial;
+        Debug.Log(dirtyMaterial +"+ MATERIAL");
+
     }
 }
