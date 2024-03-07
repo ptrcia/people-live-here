@@ -13,13 +13,15 @@ public class Clean : Object
     Material dirtyMaterial;
     [SerializeField]
     Material cleanMaterial;
-    [SerializeField]
-    Renderer rend;
+
+    public bool isCleaned;
+    //interfaz aqui en algun lado :)
+
 
     private void Awake()
     {
-        dirtyMaterial = this.gameObject.GetComponent<Material>();
-        rend = this.gameObject.GetComponent<Renderer>();
+        isCleaned = false;
+        //dirtyMaterial = this.gameObject.GetComponent<Material>();
     }
 
     public void Cleaning()
@@ -29,6 +31,17 @@ public class Clean : Object
         //dirtyMaterial = cleanMaterial;
         rend.material = cleanMaterial;
         Debug.Log(dirtyMaterial +"+ MATERIAL");
-
+        isCleaned = true;
+    }
+    public void isTheObjectCleaned()
+    {
+        if (isCleaned)
+        {
+            rend.material = cleanMaterial;
+        }
+        else
+        {
+            rend.material = dirtyMaterial;
+        }
     }
 }

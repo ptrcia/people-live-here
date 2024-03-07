@@ -1691,7 +1691,7 @@ Transform:
   m_GameObject: {fileID: 895663601}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.8499997, y: -0.12, z: -0.67}
+  m_LocalPosition: {x: 4.34, y: -0.12, z: -2.67}
   m_LocalScale: {x: 1.0718524, y: 1.4608574, z: 1.1657575}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2637,7 +2637,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 89b988d1aa0506e41b3671c5cb828bd7, type: 2}
+  - {fileID: 2100000, guid: 3ea2e5b3fbf9c5449aa1148bd01f6501, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2709,14 +2709,14 @@ MonoBehaviour:
   rb: {fileID: 1225334702}
   col: {fileID: 1225334698}
   objectType: 2
-  mat: {fileID: 2100000, guid: 89b988d1aa0506e41b3671c5cb828bd7, type: 2}
+  mat: {fileID: 2100000, guid: 3ea2e5b3fbf9c5449aa1148bd01f6501, type: 2}
   newMat: {fileID: 2100000, guid: fc2841430626a494ca132136a643927f, type: 2}
   textToShow: Clean
   textUI: {fileID: 756221935}
   rend: {fileID: 1225334699}
-  dirtyMaterial: {fileID: 0}
+  dirtyMaterial: {fileID: 2100000, guid: 3ea2e5b3fbf9c5449aa1148bd01f6501, type: 2}
   cleanMaterial: {fileID: 2100000, guid: f26ff0bfb898e114185826a7b0a311e1, type: 2}
-  rend: {fileID: 1225334699}
+  isCleaned: 0
 --- !u!1 &1240553883
 GameObject:
   m_ObjectHideFlags: 0

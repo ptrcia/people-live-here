@@ -17,7 +17,7 @@ public class Object : MonoBehaviour
     [SerializeField] string textToShow;
     [SerializeField] TextMeshProUGUI textUI;
 
-    [SerializeField] Renderer rend;
+    public Renderer rend; //protegida en el futuro
 
     public void IsObjectSelected(bool selected)
     {

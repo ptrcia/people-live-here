@@ -73,8 +73,11 @@ public class PlayerRaycast : MonoBehaviour
             if (clean != null)
             {
                 clean.IsObjectSelected(false);
+                clean.isTheObjectCleaned();
                 clean = null;
                 //Debug.Log("Objeto no selecionado");
+                //ccomprobar si tiene elcolor rojo o verde
+
             }
         }
         //READ
